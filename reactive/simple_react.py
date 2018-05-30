@@ -1,6 +1,7 @@
 from charms.reactive import when, when_not, set_state
 
 from charmhelpers.core.hookenv import status_set
+from charmhelpers.core.hookenv import log
 
 
 @when_not('simple-react.installed')
@@ -18,4 +19,5 @@ def install_simple_react():
     #
     print("I hope this is logged!")
     set_state('simple-react.installed')
-    status_set("active", "Ready to use")
+    status_set("active", "Ready")
+    log("Installation complete")
